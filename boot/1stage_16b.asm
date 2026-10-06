@@ -1,7 +1,7 @@
 [bits 16]
 [org 0x7c00]
 
-start:
+stage1:
   cli
 
   xor ax, ax      ; as = 0
