@@ -8,7 +8,7 @@ void anodyx_kernel (void) {
   // clear_buff() <-- this from vga subsystem
   bool is_kernel_started = false;
   while (is_kernel_started) {
-    // something...
+    // kernel init & something...
   }
   return 1;
 }
