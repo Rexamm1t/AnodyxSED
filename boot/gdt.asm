@@ -5,7 +5,7 @@ gdt_start:
 
 ; code - ring 0, 32bit
 gdt_code:
-  dw 0xFFFF          ; bytes 0-1: limit 15..0 (16bit)
+  dw 0xffff          ; bytes 0-1: limit 15..0 (16bit)
   dw 0x0000          ; bytes 2-3: base 15..0 (16bit)
   db 0x00            ; byte 4: base 23..16 (8bit)
   db 10011010b       ; byte 5: access byte (8bit)
@@ -14,7 +14,7 @@ gdt_code:
 
 ; data - ring 0, 32bit
 gdt_data:
-  dw 0xFFFF          ; bytes 0-1: limit 15..0 (16bit)
+  dw 0xffff          ; bytes 0-1: limit 15..0 (16bit)
   dw 0x0000          ; bytes 2-3: base 15..0 (16bit)
   db 0x00            ; byte 4: base 23..16 (8bit)
   db 10010010b       ; byte 5: access byte (8bit)
@@ -28,5 +28,5 @@ gdt_descriptor:
   dw gdt_end - gdt_start - 1  ; size(gdt)-1
   dd gdt_start                ; linear start address gdt 
 
-CODE_SEG equ gdt_code - gdt_start ; = 0x08
-DATA_SEG equ gdt_data - gdt_start ; = 0x10
+code_seg equ gdt_code - gdt_start ; = 0x08
+data_seg equ gdt_data - gdt_start ; = 0x10
