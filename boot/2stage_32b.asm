@@ -1,9 +1,7 @@
 [bits 16]
 [org 0x8000]
 
-%include "gdt.asm"
-
-preparation:
+pre32:
   in  al, 0x92            ; read 0x92 port
   or  al, 2               ; write 1 bit (a20 gate)
   and al, 0xfe            ; reset 0 bit
@@ -34,3 +32,5 @@ anodyx_32:
 
 loop:
   jmp loop
+
+%include "gdt.asm"
