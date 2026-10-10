@@ -50,10 +50,3 @@ code_seg   equ gdt_code   - gdt_start ; = 0x08
 data_seg   equ gdt_data   - gdt_start ; = 0x10
 code64_seg equ gdt64_code - gdt_start ; = 0x18
 data64_seg equ gdt64_data - gdt_start ; = 0x20
-; pointer to gdt
-gdt_descriptor:
-  dw gdt_end - gdt_start - 1  ; size(gdt)-1
-  dd gdt_start                ; linear start address gdt 
-
-code_seg equ gdt_code - gdt_start ; = 0x08
-data_seg equ gdt_data - gdt_start ; = 0x10
