@@ -44,7 +44,7 @@ dap2:
 dap3:
   db 0x10                  ; packet size (16 bytes)
   db 0x00                  ; reserved
-  dw 0x0020                ; 32 sectors = 16 kb
+  dw 0x0030                ; 48 sectors = 24 kb
   dw 0x0000                ; offset
   dw 0x1000                ; segment (0x1000:0x0000 = 0x10000)
   dq 0x0000000000000011    ; lba = 17
